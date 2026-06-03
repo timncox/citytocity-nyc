@@ -7,10 +7,10 @@ const f = site.home.footer;
     <div class="foot-grid">
       <div>
         <h4>{f.newsletterHeading}</h4>
-        <form class="news" action={`mailto:${site.site.email}`} method="post" enctype="text/plain">
-          <input name="first" placeholder="First Name (required)" required />
-          <input name="last" placeholder="Last Name (required)" required />
-          <input class="full" type="email" name="email" placeholder="Email (required)" required />
+        <form class="news" action={`mailto:${site.site.email}`} method="post" enctype="text/plain" aria-label={f.newsletterHeading}>
+          <input name="first" placeholder="First Name (required)" aria-label="First name" autocomplete="given-name" required />
+          <input name="last" placeholder="Last Name (required)" aria-label="Last name" autocomplete="family-name" required />
+          <input class="full" type="email" name="email" placeholder="Email (required)" aria-label="Email address" autocomplete="email" required />
           <button class="btn sub" type="submit">{f.newsletterButton}</button>
         </form>
       </div>
