@@ -1,10 +1,11 @@
 # City to City NYC — weft site
 
 An AI-discoverable Astro site for **City to City NYC** (a ministry of Redeemer City to City).
-Originally scaffolded from the weft `default` template, then given a custom
-**"Sacred Modern editorial"** design (warm paper, deep garnet accent, Fraunces +
-Hanken Grotesk). The design lives in components + `src/styles/global.css`; **all
-editable copy lives in `src/data/main.json`.**
+Originally scaffolded from the weft `default` template, then styled to match the
+**Redeemer City to City NYC brand**: light cool-gray ground, scarlet-red accent
+(`#EB1D2E`), bold grotesque type (Archivo + Hanken Grotesk), a subtle cross/plus-grid
+motif, rounded white cards with soft shadows, and dark-navy panels. The design lives in
+components + `src/styles/global.css`; **all editable copy lives in `src/data/main.json`.**
 
 ## Editing rules (when AI is editing this site)
 
@@ -19,8 +20,9 @@ a layout change, a color/typography change).
 
 ### The `*emphasis*` convention
 In headlines and headings, wrap a word or phrase in `*asterisks*` to render it in the
-garnet display-italic accent — e.g. `"Starting & *strengthening* churches…"` or
-`"Nova *Omnia*"`. Move the asterisks to move the emphasis. Applies to:
+red accent — e.g. `"Starting & *strengthening* churches…"` or `"Nova *Omnia*"`. In the
+hero headline the emphasized phrase also gets a hand-drawn red circle. Move the asterisks
+to move the emphasis. Applies to:
 `home.hero.headline`, `home.pathwaysIntro.heading`, `home.pathways[].title`,
 `home.nova.title`, `home.conviction.quote`, `home.eventsIntro.heading`,
 `home.give.heading`. (Implemented by `emph()` in `src/site.ts`.)

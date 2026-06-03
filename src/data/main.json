@@ -6,9 +6,9 @@
     "email": "nyc.admin@redeemercitytocity.com"
   },
   "theme": {
-    "accent": "#7C1E2B",
+    "accent": "#EB1D2E",
     "mode": "light",
-    "font": "serif"
+    "font": "sans"
   },
   "nav": [
     { "label": "Start a Church", "href": "/programs#start" },
