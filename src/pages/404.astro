@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../site";
+
+const home = site.pages.find((p) => p.slug === "/") ?? site.pages[0];
+---
+<Base title="Not found" pageSlug="/404">
+  <h1>Page not found</h1>
+  <p class="tagline">The address you tried doesn&rsquo;t lead anywhere on this site.</p>
+  <p>
+    Try the <a href="/">home page</a>{home && home.title ? <> — <em>{home.title}</em></> : null}
+    {site.site.url ? <> or write to us if you think this is a mistake.</> : null}
+  </p>
+</Base>
