@@ -1,0 +1,10 @@
+---
+import { site, emph } from "../site";
+const a = site.home.announce;
+---
+<div class="announce">
+  <span class="dot"></span><span set:html={emph(a.text)} />
+  {a.languages?.length ? (
+    <span class="lang"><b>{a.languages[0]}</b>{a.languages.slice(1).map((l) => <> &nbsp;·&nbsp; {l}</>)}</span>
+  ) : null}
+</div>

@@ -73,8 +73,33 @@ a { color: inherit; text-decoration: none; }
 .hero .img img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
 .hero .img .cap { position: absolute; left: 22px; bottom: 16px; color: #fff; font-size: 11px; letter-spacing: .18em; font-weight: 700; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
 
+/* logo + nav (white logo, works on dark) */
+.brand .logo { height: 30px; width: auto; display: block; }
+.site-nav { background: var(--slate); position: relative; z-index: 20; }
+.site-nav .menu a { color: rgba(255,255,255,.82); }
+.site-nav .menu a:hover { color: #fff; }
+.site-nav .menu .give { background: var(--red); color: #fff; }
+.site-nav .menu .give:hover { background: var(--red2); color: #fff; }
+.site-nav.floating { background: transparent; }
+
+/* image-backed hero banner (header sits over the skyline) */
+.hero-banner { position: relative; background-color: #0e121b; background-image: linear-gradient(180deg, rgba(235,29,46,.10), transparent 40%), radial-gradient(120% 80% at 80% 0, rgba(40,60,80,.5), transparent 60%); color: #fff; overflow: hidden; }
+.hero-skyline { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: auto; z-index: 1; opacity: .92; pointer-events: none; }
+.hero-banner::before { content: ""; position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(8,11,17,.78) 0%, rgba(8,11,17,.2) 26%, transparent 50%, rgba(14,18,27,.55) 100%); }
+.hero-top { position: relative; z-index: 4; }
+.hero-banner .announce { background: rgba(8,11,17,.72); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.hero-banner .hero-inner { position: relative; z-index: 3; padding: 70px 0 160px; }
+.hero-banner .ey { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #fff; display: inline-flex; align-items: center; gap: .6em; }
+.hero-banner .ey::before { content: ""; width: 22px; height: 2px; background: var(--red); border-radius: 2px; }
+.hero-banner h1 { font-size: clamp(40px,6vw,84px); font-weight: 900; text-transform: uppercase; letter-spacing: -.03em; margin-top: 18px; max-width: 15ch; color: #fff; }
+.hero-banner h1 .hl { color: var(--red); }
+.hero-banner .sub { margin-top: 22px; max-width: 54ch; font-size: 18px; color: #D6DCE1; }
+@media (max-width: 600px) {
+  .hero-banner .hero-inner { padding: 50px 0 72px; }
+}
+
 /* how we help */
-.help { padding: 30px 0 92px; }
+.help { padding: 64px 0 92px; }
 .help-grid { display: grid; grid-template-columns: 1.02fr 1.1fr; gap: 30px; align-items: stretch; }
 .help-card { background: var(--card); border-radius: 16px; padding: 46px 44px; box-shadow: 0 30px 60px -38px rgba(22,32,42,.3); display: flex; flex-direction: column; justify-content: center; }
 .help-card h2 { font-size: clamp(34px,4.2vw,52px); font-weight: 800; }
@@ -132,6 +157,7 @@ a { color: inherit; text-decoration: none; }
 .nova-logo .nm, .nova-logo .am { font-family: var(--disp); font-weight: 600; font-size: 40px; line-height: .95; letter-spacing: .06em; }
 .nova-logo .am { color: #E7B36A; }
 .nova-logo .cr { margin-top: 12px; font-size: 10px; letter-spacing: .32em; opacity: .85; }
+.nova-logo-img { width: 72%; max-width: 280px; height: auto; filter: drop-shadow(0 6px 20px rgba(0,0,0,.45)); }
 .nova-txt .ey { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--red); }
 .nova-txt h2 { font-size: clamp(30px,3.6vw,46px); font-weight: 800; margin-top: 14px; max-width: 16ch; }
 .nova-txt h2 .hl { color: inherit; position: relative; white-space: nowrap; }

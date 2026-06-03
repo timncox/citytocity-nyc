@@ -29,7 +29,7 @@
       "eyebrow": "Redeemer City to City",
       "headline": "Starting & *strengthening* NYC churches",
       "sub": "We prayerfully help leaders start and strengthen churches to advance the gospel collaboratively across NYC — as a partner and resource for other global cities.",
-      "image": "https://images.unsplash.com/photo-1522083165195-3424ed129620?q=80&w=1600&auto=format&fit=crop",
+      "image": "/media/hero.jpg",
       "imageCaption": "New York City"
     },
     "howWeHelp": {
@@ -45,7 +45,7 @@
     "programs": {
       "lead": "Explore *tailored church leadership development programs* for every stage:",
       "heading": "Discover the perfect fit for *your* journey!",
-      "image": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1200&auto=format&fit=crop",
+      "image": "/media/photo-3.jpg",
       "items": [
         { "name": "City Ministry Program", "body": "A certificate program to develop ministry leaders seeking practical urban ministry skills. Experienced practitioners, including Tim Keller, deliver the program through a robust learning community.", "cta": { "label": "Learn More", "href": "/programs#strengthen" } },
         { "name": "Incubator Collective", "body": "Our two-year training program for pastors who have planted in the past 12 months or plan to in the next 12. In-depth training and relational support to develop the competencies to lead a new church.", "cta": { "label": "Learn More", "href": "/programs#start" } },
@@ -60,6 +60,7 @@
       "body": "Nova Omnia is a center for city renewal operated by City to City NYC on the Upper East Side of Manhattan, at 150 E. 91st Street. We envision it as a hub for catalyzing strategic, citywide change with likeminded non-profit and ministry leaders. Connect, collaborate, and seek the renewal of the city alongside others who share our vision.",
       "cta": { "label": "Reserve your space", "href": "/nova-omnia" },
       "image": "https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=1000&auto=format&fit=crop",
+      "logoImage": "/media/nova-omnia.png",
       "logoTop": "NOVA",
       "logoBottom": "OMNIA",
       "logoCaption": "A CENTER FOR CITY RENEWAL"
@@ -72,13 +73,13 @@
         "title": "Start a Church",
         "body": "God is doing amazing things in New York City, equipping full-time and co-vocational *church planters to thrive* in ministering in specialized contexts. They play a crucial role in creating a *vibrant gospel movement*.",
         "cta": { "label": "Learn More", "href": "/programs#start" },
-        "image": "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop"
+        "image": "/media/photo-1.jpg"
       },
       {
         "title": "Strengthen a Church",
         "body": "The health of a church is defined by the body of Christ. It's strengthened through the *renewing power of the Gospel* — being and developing disciples. *Discover how we can help* you along in your journey.",
         "cta": { "label": "Learn More", "href": "/programs#strengthen" },
-        "image": "https://images.unsplash.com/photo-1473177104440-ffee2f376098?q=80&w=1200&auto=format&fit=crop"
+        "image": "/media/photo-2.jpg"
       }
     ],
     "whoWeAre": {

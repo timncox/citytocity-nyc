@@ -1,0 +1,15 @@
+---
+import { site } from "../site";
+interface Props { floating?: boolean }
+const { floating = false } = Astro.props;
+---
+<nav class={`site-nav${floating ? " floating" : ""}`}>
+  <div class="wrap nav">
+    <a class="brand" href="/"><img class="logo" src="/media/logo.png" alt={site.site.name} width="290" height="48" /></a>
+    <div class="menu">
+      {site.nav.map((item) => (
+        <a class={item.label === "Give" ? "give" : ""} href={item.href}>{item.label}</a>
+      ))}
+    </div>
+  </div>
+</nav>

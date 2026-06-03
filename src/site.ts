@@ -29,7 +29,7 @@ export interface Home {
   hero: { eyebrow: string; headline: string; sub: string; image: string; imageCaption: string };
   howWeHelp: { heading: string; body: string; cta: CTA; video: { label: string; image: string; href: string } };
   programs: { lead: string; heading: string; image: string; items: ProgramItem[] };
-  nova: { eyebrow: string; heading: string; body: string; cta: CTA; image: string; logoTop: string; logoBottom: string; logoCaption: string };
+  nova: { eyebrow: string; heading: string; body: string; cta: CTA; image: string; logoImage?: string; logoTop: string; logoBottom: string; logoCaption: string };
   belief: { heading: string };
   rows: Row[];
   whoWeAre: { heading: string; body: string; cta: CTA; image: string };

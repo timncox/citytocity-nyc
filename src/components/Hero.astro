@@ -1,15 +1,18 @@
 ---
 import { site, emph } from "../site";
+import Announce from "./Announce.astro";
+import Nav from "./Nav.astro";
 const h = site.home.hero;
 ---
-<section class="hero">
-  <div class="wrap">
+<section class="hero-banner">
+  <img class="hero-skyline" src={h.image} alt="" aria-hidden="true" />
+  <div class="hero-top">
+    <Announce />
+    <Nav floating={true} />
+  </div>
+  <div class="wrap hero-inner">
     <span class="ey rv">{h.eyebrow}</span>
     <h1 class="rv" set:html={emph(h.headline)} />
     <p class="sub rv">{h.sub}</p>
-    <div class="img rv">
-      <img src={h.image} alt={h.imageCaption} loading="eager" />
-      <span class="cap">{h.imageCaption}</span>
-    </div>
   </div>
 </section>

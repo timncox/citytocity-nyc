@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import HowWeHelp from "../components/HowWeHelp.astro";
 import Programs from "../components/Programs.astro";
@@ -14,7 +13,6 @@ import { site, getPage } from "../site";
 const home = getPage("/");
 ---
 <Base title={home?.title ?? site.site.name} description={site.site.description} pageSlug="/">
-  <Header />
   <Hero />
   <HowWeHelp />
   <Programs />

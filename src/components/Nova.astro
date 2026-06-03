@@ -7,8 +7,14 @@ const n = site.home.nova;
     <div class="nova-card rv">
       <img src={n.image} alt="Nova Omnia" loading="lazy" />
       <div class="nova-logo">
-        <div class="nm">{n.logoTop}</div><div class="am">{n.logoBottom}</div>
-        <div class="cr">{n.logoCaption}</div>
+        {n.logoImage ? (
+          <img class="nova-logo-img" src={n.logoImage} alt={`${n.logoTop} ${n.logoBottom}`} />
+        ) : (
+          <>
+            <div class="nm">{n.logoTop}</div><div class="am">{n.logoBottom}</div>
+            <div class="cr">{n.logoCaption}</div>
+          </>
+        )}
       </div>
     </div>
     <div class="nova-txt">
