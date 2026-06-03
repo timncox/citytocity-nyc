@@ -1,47 +1,175 @@
 {
   "site": {
     "name": "City to City NYC",
-    "tagline": "Planting and strengthening gospel-centered churches across New York City",
-    "description": "City to City NYC is a church-planting network and ministry of Redeemer City to City that prayerfully helps leaders start and strengthen gospel-centered churches across New York City's five boroughs."
+    "tagline": "Starting & strengthening churches across New York City",
+    "description": "City to City NYC is a church-planting network and ministry of Redeemer City to City that prayerfully helps leaders start and strengthen gospel-centered churches across New York City's five boroughs.",
+    "email": "nyc.admin@redeemercitytocity.com"
+  },
+  "theme": {
+    "accent": "#7C1E2B",
+    "mode": "light",
+    "font": "serif"
+  },
+  "nav": [
+    { "label": "Start a Church", "href": "/programs#start" },
+    { "label": "Strengthen a Church", "href": "/programs#strengthen" },
+    { "label": "Nova Omnia", "href": "/nova-omnia" },
+    { "label": "Events", "href": "/#events" },
+    { "label": "Give", "href": "/#give" }
+  ],
+  "home": {
+    "hero": {
+      "eyebrow": "A church-planting network for New York",
+      "headline": "Starting & *strengthening* churches across New York City.",
+      "lede": "We prayerfully help leaders start and strengthen gospel-centered churches — collaboratively, across all five boroughs.",
+      "primaryCta": { "label": "Find your pathway", "href": "#pathways" },
+      "secondaryCta": { "label": "Visit Nova Omnia", "href": "#nova" },
+      "image": "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?q=80&w=1200&auto=format&fit=crop",
+      "imageCaption": "New York, five boroughs",
+      "verticalLabel": "Redeemer City to City"
+    },
+    "creed": [
+      "To see the gospel transform lives and cities",
+      "Start churches",
+      "Strengthen churches",
+      "Advance the gospel collaboratively"
+    ],
+    "pathwaysIntro": {
+      "heading": "Two callings. *One* city. Find where you are.",
+      "note": "Whether you are sensing a call to plant or leading a congregation that wants to grow deeper, there is a pathway built for you."
+    },
+    "pathways": [
+      {
+        "num": "PATHWAY 01",
+        "glyph": "a",
+        "title": "Start a *church*",
+        "blurb": "Training, coaching, and community for planters — from those years away to those just launched.",
+        "programs": [
+          { "name": "Incubator Collective", "desc": "Two-year training for newly planted & aspiring planters" },
+          { "name": "Fellows Program", "desc": "For leaders 2–3 years from planting" },
+          { "name": "Incubador Grupal", "desc": "Spanish-language cohort" }
+        ],
+        "cta": { "label": "Explore church planting", "href": "/programs#start" }
+      },
+      {
+        "num": "PATHWAY 02",
+        "glyph": "b",
+        "title": "Strengthen a *church*",
+        "blurb": "Formation for leaders and congregations already serving the city, ready to go further.",
+        "programs": [
+          { "name": "City Ministry Program", "desc": "Certificate in practical urban ministry" },
+          { "name": "Evangelism Learning Cohort", "desc": "Re-center Jesus in life & community" },
+          { "name": "Community Engagement Cohort", "desc": "Collaborate for the common good" }
+        ],
+        "cta": { "label": "Explore leader formation", "href": "/programs#strengthen" }
+      }
+    ],
+    "nova": {
+      "eyebrow": "A center for city renewal",
+      "title": "Nova *Omnia*",
+      "body": "Our home on the Upper East Side — a gathering place for ministry collaboration, learning, and renewal, open to the wider church to convene and create.",
+      "address": "150 E. 91st Street, 8th Floor · Manhattan",
+      "cta": { "label": "Reserve your space", "href": "/nova-omnia" },
+      "image": "https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=1200&auto=format&fit=crop"
+    },
+    "conviction": {
+      "eyebrow": "Why we plant",
+      "quote": "Planting gospel-centered churches is the *most catalytic way* to reach a city — and to see lives and neighborhoods made new.",
+      "source": "The conviction of City to City NYC"
+    },
+    "eventsIntro": {
+      "heading": "What's *next*",
+      "note": "Cohorts, intensives, and gatherings across the city. Dates below are placeholders — to be confirmed with the City to City NYC calendar."
+    },
+    "events": [
+      { "date": "Sep 2026", "name": "Incubator Collective — Fall Intake", "sub": "Two-year church-planting cohort begins", "href": "/programs#start" },
+      { "date": "Oct 2026", "name": "City Ministry Program Info Session", "sub": "Nova Omnia · 150 E. 91st Street", "href": "/programs#strengthen" },
+      { "date": "Ongoing", "name": "Evangelism & Community Engagement Cohorts", "sub": "Rolling enrollment for church leaders", "href": "/programs#strengthen" }
+    ],
+    "memorial": {
+      "kicker": "In gratitude",
+      "name": "Timothy J. Keller",
+      "years": "1950 — 2023",
+      "body": "Redeemer City to City is forever grateful for the leadership of our co-founder, whose vision for the city continues to shape this work."
+    },
+    "give": {
+      "eyebrow": "Partner with the work",
+      "heading": "Help us start the *next* church.",
+      "body": "Your generosity multiplies — equipping planters, strengthening leaders, and renewing the city, church by church.",
+      "primaryCta": { "label": "Give to the city", "href": "#give" },
+      "secondaryCta": { "label": "Become a partner", "href": "mailto:nyc.admin@redeemercitytocity.com" }
+    },
+    "newsletter": {
+      "eyebrow": "Stay close",
+      "heading": "The City to City NYC newsletter",
+      "body": "Stories from the field, cohort openings, and gatherings — a few times a season.",
+      "placeholder": "you@email.com",
+      "button": "Join"
+    },
+    "footer": {
+      "columns": [
+        {
+          "title": "Start",
+          "links": [
+            { "label": "Incubator Collective", "href": "/programs#start" },
+            { "label": "Fellows Program", "href": "/programs#start" },
+            { "label": "Incubador Grupal", "href": "/programs#start" }
+          ]
+        },
+        {
+          "title": "Strengthen",
+          "links": [
+            { "label": "City Ministry Program", "href": "/programs#strengthen" },
+            { "label": "Evangelism Cohort", "href": "/programs#strengthen" },
+            { "label": "Community Engagement", "href": "/programs#strengthen" },
+            { "label": "MasterClasses", "href": "/programs#strengthen" }
+          ]
+        },
+        {
+          "title": "Connect",
+          "links": [
+            { "label": "Nova Omnia", "href": "/nova-omnia" },
+            { "label": "Events", "href": "/#events" },
+            { "label": "Give", "href": "/#give" },
+            { "label": "Contact", "href": "/contact" }
+          ]
+        }
+      ],
+      "legal": "© 2026 City to City NYC · A ministry of Redeemer City to City",
+      "contactLine": "150 E 91st Street, 8th Floor, New York, NY 10128 · nyc.admin@redeemercitytocity.com"
+    }
   },
   "pages": [
     {
       "slug": "/",
-      "title": "City to City NYC — Gospel-Centered Church Planting in New York City",
-      "content": "## The City Is Our Parish\n\nNew York City is one of the most complex, diverse, and influential cities on earth. It is also a city in need of the gospel — block by block, borough by borough. City to City NYC is a ministry of Redeemer City to City dedicated to raising up, training, and sustaining leaders who plant and strengthen gospel-centered churches across all five boroughs.\n\nWe work at the intersection of prayer, theological depth, and practical urban wisdom — cultivating a movement of churches that love their neighborhoods and serve the whole city.\n\n---\n\n## Two Core Pathways\n\n### Start a Church\nWe walk with planters from vision to launch and beyond, offering structured formation for leaders at every stage of the planting journey.\n\n- **Incubator Collective** — A two-year cohort-based training program for newly planted and aspiring church planters. Deep theological formation meets hands-on coaching in the context of real ministry.\n- **Fellows Program** — Designed for leaders who are two to three years from planting. Build your theological foundation, sharpen your vision, and enter a network of practitioners before you break ground.\n- **Incubador Grupal** — Our Spanish-language cohort, equipping Latino and Spanish-speaking leaders to plant and lead gospel-centered churches throughout New York City.\n\n### Strengthen a Church\nPlanting a church is only the beginning. We are equally committed to helping established churches grow in health, depth, and missional impact.\n\n- **City Ministry Program** — A certificate program in practical urban ministry, grounding pastors and church leaders in the theological and contextual tools needed to shepherd a city congregation well.\n- **Evangelism Learning Cohort** — Equipping churches to cultivate cultures of genuine, grace-filled evangelism in one of the world's most secular cities.\n- **Community Engagement Cohort** — Helping churches move beyond their walls to serve and bless their neighborhoods with gospel integrity.\n- **MasterClasses** — Focused, expert-led sessions on the most pressing topics in urban church ministry — available to leaders across the network.\n\n---\n\n## Nova Omnia\n\nNestled on the Upper East Side, **Nova Omnia** — Latin for *all things new* — is City to City NYC's center for city renewal. It is a gathering place for leaders, a home for our programs, and a symbol of our conviction that the gospel renews not just individuals, but communities and cities.\n\n📍 150 E. 91st Street, 8th Floor, New York, NY 10128\n\n---\n\n## In Memory of Tim Keller (1950–2023)\n\nCity to City NYC honors the legacy of our co-founder, **Timothy J. Keller** — pastor, theologian, and one of the great urban ministers of his generation. His vision for a gospel movement in New York City, and his conviction that the church could be both theologically serious and culturally engaged, is the foundation on which we build. We carry his work forward with gratitude and resolve.\n\n---\n\n## Stay Connected\n\nJoin our newsletter to receive updates on programs, new cohorts, stories from the network, and resources for gospel ministry in New York City.\n\n[Subscribe to our Newsletter →](#newsletter)\n\n[Support Our Work — Give Today →](#give)"
+      "title": "City to City NYC — Starting & Strengthening Churches in New York City",
+      "content": "City to City NYC is a church-planting network and ministry of Redeemer City to City. We prayerfully help leaders start and strengthen gospel-centered churches across all five boroughs, through two pathways — Start a Church and Strengthen a Church — and from our home, Nova Omnia, on the Upper East Side."
     },
     {
       "slug": "/programs",
       "title": "Programs — Start & Strengthen a Church",
-      "content": "## Our Programs\n\nCity to City NYC offers two integrated pathways — one for those beginning the planting journey, and one for those deepening the health of an existing congregation. Every program is shaped by the realities of urban ministry in New York City and grounded in the gospel.\n\n---\n\n## Start a Church\n\n### Incubator Collective\nA rigorous, two-year cohort experience for newly planted and aspiring church planters. Participants engage in theological formation, peer learning, and one-on-one coaching while actively doing ministry. The Incubator Collective is built on the belief that planters are formed in community, not in isolation.\n\n**Who it's for:** Planters in the early stages of a new church, or those preparing to launch within the next year.\n\n### Fellows Program\nFor leaders who sense a clear call to plant but are still two to three years from launching, the Fellows Program provides the runway needed to build a solid theological foundation, develop a ministry philosophy, and step into a trusted network of mentors and peers.\n\n**Who it's for:** Aspiring planters at the discernment and preparation stage.\n\n### Incubador Grupal\nOur Spanish-language cohort creates a dedicated space for Latino and Spanish-speaking leaders to be trained, encouraged, and sent out to plant gospel-centered churches that reflect the rich diversity of New York City.\n\n**Who it's for:** Spanish-speaking leaders called to church planting in NYC's Latino communities.\n\n---\n\n## Strengthen a Church\n\n### City Ministry Program\nA certificate program in practical urban ministry offering pastors and ministry leaders a structured curriculum in the theology, history, and practice of city-focused church leadership. Grounded, applicble, and designed for working ministers.\n\n**Who it's for:** Pastors and church leaders in established or growing congregations.\n\n### Evangelism Learning Cohort\nNew York City presents unique challenges and opportunities for evangelism. This cohort helps church leaders develop strategies, practices, and a culture of evangelism that is both theologically faithful and contextually fluent.\n\n**Who it's for:** Pastors and ministry leaders wanting to cultivate evangelistic vitality in their churches.\n\n### Community Engagement Cohort\nThe gospel sends churches outward. This cohort equips leaders to engage their specific neighborhoods with wisdom and integrity — building genuine, long-term relationships between congregation and community.\n\n**Who it's for:** Leaders committed to justice, mercy, and neighbor love as expressions of gospel witness.\n\n### MasterClasses\nIntensive, expert-led sessions on the most relevant and pressing topics in urban ministry. MasterClasses draw on the wisdom of experienced practitioners and are open to leaders across the City to City NYC network.\n\n**Who it's for:** Any ministry leader seeking focused development on a specific topic.\n\n---\n\n## Interested in a Program?\n\nReach out to learn more about upcoming cohorts, application timelines, and how City to City NYC can serve your ministry calling.\n\n[Contact Us →](/contact)"
+      "content": "## Our Programs\n\nCity to City NYC offers two integrated pathways — one for those beginning the planting journey, and one for those deepening the health of an existing congregation. Every program is shaped by the realities of urban ministry in New York City and grounded in the gospel.\n\n---\n\n## Start a Church\n\n### Incubator Collective\nA rigorous, two-year cohort experience for newly planted and aspiring church planters. Participants engage in theological formation, peer learning, and one-on-one coaching while actively doing ministry. The Incubator Collective is built on the belief that planters are formed in community, not in isolation.\n\n**Who it's for:** Planters in the early stages of a new church, or those preparing to launch within the next year.\n\n### Fellows Program\nFor leaders who sense a clear call to plant but are still two to three years from launching, the Fellows Program provides the runway needed to build a solid theological foundation, develop a ministry philosophy, and step into a trusted network of mentors and peers.\n\n**Who it's for:** Aspiring planters at the discernment and preparation stage.\n\n### Incubador Grupal\nOur Spanish-language cohort creates a dedicated space for Latino and Spanish-speaking leaders to be trained, encouraged, and sent out to plant gospel-centered churches that reflect the rich diversity of New York City.\n\n**Who it's for:** Spanish-speaking leaders called to church planting in NYC's Latino communities.\n\n---\n\n## Strengthen a Church\n\n### City Ministry Program\nA certificate program in practical urban ministry offering pastors and ministry leaders a structured curriculum in the theology, history, and practice of city-focused church leadership. Grounded, applicable, and designed for working ministers.\n\n**Who it's for:** Pastors and church leaders in established or growing congregations.\n\n### Evangelism Learning Cohort\nNew York City presents unique challenges and opportunities for evangelism. This cohort helps church leaders develop strategies, practices, and a culture of evangelism that is both theologically faithful and contextually fluent.\n\n**Who it's for:** Pastors and ministry leaders wanting to cultivate evangelistic vitality in their churches.\n\n### Community Engagement Cohort\nThe gospel sends churches outward. This cohort equips leaders to engage their specific neighborhoods with wisdom and integrity — building genuine, long-term relationships between congregation and community.\n\n**Who it's for:** Leaders committed to justice, mercy, and neighbor love as expressions of gospel witness.\n\n### MasterClasses\nIntensive, expert-led sessions on the most relevant and pressing topics in urban ministry. MasterClasses draw on the wisdom of experienced practitioners and are open to leaders across the City to City NYC network.\n\n**Who it's for:** Any ministry leader seeking focused development on a specific topic.\n\n---\n\n## Interested in a Program?\n\nReach out to learn more about upcoming cohorts, application timelines, and how City to City NYC can serve your ministry calling.\n\n[Contact Us →](/contact)"
     },
     {
       "slug": "/nova-omnia",
       "title": "Nova Omnia — A Center for City Renewal",
-      "content": "## Nova Omnia\n### A Center for City Renewal\n\n*Nova Omnia* — Latin for **all things new** — is City to City NYC's home and hub on the Upper East Side of Manhattan. It is more than an address. It is a statement of conviction: that the gospel of Jesus Christ renews all things — individuals, families, neighborhoods, and the city itself.\n\nNova Omnia exists to be a gathering place for the leaders, planters, and practitioners who make up the City to City NYC network. It is where cohorts meet, where conversations happen, where vision is sharpened and community is built.\n\n---\n\n## Visit Us\n\n**Nova Omnia — City to City NYC**\n150 E. 91st Street, 8th Floor\nNew York, NY 10128\n\nLocated on the Upper East Side, Nova Omnia is easily accessible by subway and bus.\n\n---\n\n## The Vision Behind the Name\n\nThe name draws on the ancient Christian hope — that the redemptive work of Christ reaches further than any brokenness, and that the city is not beyond renewal. We plant churches, train leaders, and strengthen congregations because we believe the New York City of tomorrow can look different from the New York City of today — one gospel-rooted community at a time.\n\n---\n\n[Get in Touch →](/contact)\n[Support Our Work →](#give)"
+      "content": "## Nova Omnia\n### A Center for City Renewal\n\n*Nova Omnia* — Latin for **all things new** — is City to City NYC's home and hub on the Upper East Side of Manhattan. It is more than an address. It is a statement of conviction: that the gospel of Jesus Christ renews all things — individuals, families, neighborhoods, and the city itself.\n\nNova Omnia exists to be a gathering place for the leaders, planters, and practitioners who make up the City to City NYC network. It is where cohorts meet, where conversations happen, where vision is sharpened and community is built.\n\n---\n\n## Visit Us\n\n**Nova Omnia — City to City NYC**\n150 E. 91st Street, 8th Floor\nNew York, NY 10128\n\nLocated on the Upper East Side, Nova Omnia is easily accessible by subway and bus.\n\n---\n\n## The Vision Behind the Name\n\nThe name draws on the ancient Christian hope — that the redemptive work of Christ reaches further than any brokenness, and that the city is not beyond renewal. We plant churches, train leaders, and strengthen congregations because we believe the New York City of tomorrow can look different from the New York City of today — one gospel-rooted community at a time.\n\n---\n\n[Get in Touch →](/contact)"
     },
     {
       "slug": "/about",
       "title": "About City to City NYC",
-      "content": "## About City to City NYC\n\nCity to City NYC is a church-planting network and ministry of **Redeemer City to City**, the global organization founded to resource and catalyze gospel movements in the world's great cities. Our particular call is New York City — all five boroughs, every neighborhood, every kind of person.\n\nWe believe that healthy, gospel-centered churches are the single greatest force for human flourishing in a city. We exist to see more of them — and to see existing ones grow stronger.\n\n---\n\n## Our Conviction\n\nThe gospel is good news for New York City. We are not naïve about the challenges of urban ministry — the cost of living, the pace of life, the deep pluralism, the spiritual skepticism. We take them seriously. But we are equally convinced that the church, formed by the gospel and sent into the city, is exactly what New York needs.\n\nWe work with leaders across traditions, ethnicities, and neighborhoods — united by a shared commitment to the gospel and the renewal of the city.\n\n---\n\n## Honoring Tim Keller (1950–2023)\n\nCity to City NYC was co-founded by **Timothy J. Keller**, whose ministry at Redeemer Presbyterian Church and whose writing and teaching shaped a generation of urban church leaders around the world. Tim's vision — of a theologically robust, culturally engaged, city-loving church — is the inheritance we steward and the north star we follow.\n\nWe are grateful for his life, his faithfulness, and his enduring influence on gospel ministry in New York City and beyond.\n\n---\n\n## Our Network\n\nThrough our programs and the Nova Omnia center, City to City NYC is home to a growing network of planters, pastors, and ministry leaders throughout the five boroughs. We believe that leaders grow best in community — so we invest in relationships, not just curricula.\n\n---\n\n[Explore Our Programs →](/programs)\n[Contact Us →](/contact)"
+      "content": "## About City to City NYC\n\nCity to City NYC is a church-planting network and ministry of **Redeemer City to City**, the global organization founded to resource and catalyze gospel movements in the world's great cities. Our particular call is New York City — all five boroughs, every neighborhood, every kind of person.\n\nWe believe that healthy, gospel-centered churches are the single greatest force for human flourishing in a city. We exist to see more of them — and to see existing ones grow stronger.\n\n---\n\n## Our Conviction\n\nThe gospel is good news for New York City. We are not naïve about the challenges of urban ministry — the cost of living, the pace of life, the deep pluralism, the spiritual skepticism. We take them seriously. But we are equally convinced that the church, formed by the gospel and sent into the city, is exactly what New York needs.\n\nWe work with leaders across traditions, ethnicities, and neighborhoods — united by a shared commitment to the gospel and the renewal of the city.\n\n---\n\n## Honoring Tim Keller (1950–2023)\n\nCity to City NYC was co-founded by **Timothy J. Keller**, whose ministry at Redeemer Presbyterian Church and whose writing and teaching shaped a generation of urban church leaders around the world. Tim's vision — of a theologically robust, culturally engaged, city-loving church — is the inheritance we steward and the north star we follow.\n\nWe are grateful for his life, his faithfulness, and his enduring influence on gospel ministry in New York City and beyond.\n\n---\n\n[Explore Our Programs →](/programs)\n[Contact Us →](/contact)"
     },
     {
       "slug": "/contact",
       "title": "Contact City to City NYC",
-      "content": "## Get in Touch\n\nWhether you're exploring a program, interested in supporting our work, or simply want to learn more about City to City NYC, we'd love to hear from you.\n\n---\n\n## Contact Information\n\n**Email:** [nyc.admin@redeemercitytocity.com](mailto:nyc.admin@redeemercitytocity.com)\n\n**Address:**\nNova Omnia — City to City NYC\n150 E. 91st Street, 8th Floor\nNew York, NY 10128\n\n---\n\n## Newsletter\n\nStay informed about new cohorts, program updates, network stories, and resources for gospel ministry in New York City.\n\n[Subscribe to the Newsletter →](#newsletter)\n\n---\n\n## Support the Work\n\nCity to City NYC depends on the generosity of individuals, churches, and organizations who share our conviction that New York City needs the gospel. Your gift directly supports the training of church planters and the strengthening of congregations across the five boroughs.\n\n[Give to City to City NYC →](#give)"
+      "content": "## Get in Touch\n\nWhether you're exploring a program, interested in supporting our work, or simply want to learn more about City to City NYC, we'd love to hear from you.\n\n---\n\n## Contact Information\n\n**Email:** [nyc.admin@redeemercitytocity.com](mailto:nyc.admin@redeemercitytocity.com)\n\n**Address:**\nNova Omnia — City to City NYC\n150 E. 91st Street, 8th Floor\nNew York, NY 10128\n\n---\n\n## Newsletter\n\nStay informed about new cohorts, program updates, network stories, and resources for gospel ministry in New York City.\n\n---\n\n## Support the Work\n\nCity to City NYC depends on the generosity of individuals, churches, and organizations who share our conviction that New York City needs the gospel. Your gift directly supports the training of church planters and the strengthening of congregations across the five boroughs."
     }
   ],
-  "theme": {
-    "accent": "#7B1D2E",
-    "mode": "auto",
-    "font": "serif"
-  },
   "schema": {
     "type": "Organization",
     "extra": {
-      "sameAs": [
-        "https://redeemercitytocity.com"
-      ],
+      "sameAs": ["https://redeemercitytocity.com"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "150 E. 91st Street, 8th Floor",

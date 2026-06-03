@@ -1,0 +1,56 @@
+---
+import { site, emph } from "../site";
+interface Props { involved?: boolean }
+const { involved = false } = Astro.props;
+const g = site.home.give;
+const n = site.home.newsletter;
+const f = site.home.footer;
+const nameParts = site.site.name.replace(/\s*NYC$/, "");
+const hasNyc = /NYC$/.test(site.site.name);
+---
+<section class="involved" id="give">
+  {involved && (
+    <div class="wrap">
+      <div class="inv-grid">
+        <div>
+          <span class="eyebrow rv">{g.eyebrow}</span>
+          <h2 class="rv" style="margin-top:22px" set:html={emph(g.heading)} />
+          <p class="sub rv">{g.body}</p>
+          <div class="give-row rv">
+            <a class="btn btn-primary" href={g.primaryCta.href}>{g.primaryCta.label} <span class="arw">→</span></a>
+            <a class="btn-out" href={g.secondaryCta.href}>{g.secondaryCta.label}</a>
+          </div>
+        </div>
+        <div class="news rv">
+          <span class="eyebrow">{n.eyebrow}</span>
+          <h4>{n.heading}</h4>
+          <p>{n.body}</p>
+          <form action={`mailto:${site.site.email}`} method="post" enctype="text/plain">
+            <input type="email" name="email" placeholder={n.placeholder} aria-label="Email address" required />
+            <button type="submit">{n.button}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )}
+  <div class="foot wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span class="mark"></span> {nameParts.trim()}{hasNyc && <> NYC</>}</a>
+        <p class="blurb">{site.site.description}</p>
+      </div>
+      {f.columns.map((col) => (
+        <div>
+          <h5>{col.title}</h5>
+          <ul>
+            {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="foot-base">
+      <span>{f.legal}</span>
+      <span>{f.contactLine}</span>
+    </div>
+  </div>
+</section>

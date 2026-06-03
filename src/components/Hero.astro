@@ -1,0 +1,31 @@
+---
+import { site, emph } from "../site";
+const h = site.home.hero;
+const creed = site.home.creed;
+const loop = [...creed, ...creed];
+---
+<section class="hero">
+  <div class="hero-meta"><span class="est">{h.verticalLabel}</span></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow rv">{h.eyebrow}</span>
+        <h1 class="rv" style="margin-top:26px" set:html={emph(h.headline)} />
+        <p class="lede rv">{h.lede}</p>
+        <div class="hero-actions rv">
+          <a class="btn btn-primary" href={h.primaryCta.href}>{h.primaryCta.label} <span class="arw">→</span></a>
+          <a class="btn btn-ghost" href={h.secondaryCta.href}>{h.secondaryCta.label}</a>
+        </div>
+      </div>
+      <figure class="hero-figure rv">
+        <img src={h.image} alt={h.imageCaption} loading="eager" />
+        <figcaption class="cap">{h.imageCaption}</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="creed">
+    <div class="creed-track">
+      {loop.map((line) => <span>{line}</span>)}
+    </div>
+  </div>
+</section>

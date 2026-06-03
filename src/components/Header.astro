@@ -1,0 +1,20 @@
+---
+import { site } from "../site";
+interface Props { solid?: boolean }
+const { solid = false } = Astro.props;
+const nameParts = site.site.name.replace(/\s*NYC$/, "");
+const hasNyc = /NYC$/.test(site.site.name);
+---
+<header class={`site-header${solid ? " solid" : ""}`}>
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span class="mark"></span>
+      {nameParts.trim()}{hasNyc && <>&nbsp;<span class="nyc">NYC</span></>}
+    </a>
+    <div class="nav-links">
+      {site.nav.map((item) => (
+        <a class={item.label === "Give" ? "nav-cta" : ""} href={item.href}>{item.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>

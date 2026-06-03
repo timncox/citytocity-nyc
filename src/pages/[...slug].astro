@@ -1,6 +1,8 @@
 ---
 import { marked } from "marked";
 import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import { site, pathFromSlug } from "../site";
 
 export async function getStaticPaths() {
@@ -16,6 +18,15 @@ const { page } = Astro.props;
 const html = marked.parse(page.content) as string;
 ---
 <Base title={page.title} pageSlug={page.slug}>
-  <h1>{page.title}</h1>
-  <article set:html={html} />
+  <Header solid={true} />
+  <div class="subpage">
+    <div class="wrap">
+      <article class="prose">
+        <span class="eyebrow kicker">City to City NYC</span>
+        <h1>{page.title}</h1>
+        <div set:html={html} />
+      </article>
+    </div>
+  </div>
+  <Footer />
 </Base>

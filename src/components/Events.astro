@@ -1,0 +1,22 @@
+---
+import { site, emph } from "../site";
+const intro = site.home.eventsIntro;
+const events = site.home.events;
+---
+<section class="events sec-pad" id="events">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv" set:html={emph(intro.heading)} />
+      <p class="note rv">{intro.note}</p>
+    </div>
+    <div class="ev-list rv">
+      {events.map((e) => (
+        <a class="ev" href={e.href}>
+          <span class="date">{e.date}</span>
+          <div><div class="ev-name">{e.name}</div><div class="ev-sub">{e.sub}</div></div>
+          <span class="ev-go">Learn more <span class="arw">→</span></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
