@@ -1,73 +1,74 @@
 # City to City NYC — weft site
 
 An AI-discoverable Astro site for **City to City NYC** (a ministry of Redeemer City to City).
-Originally scaffolded from the weft `default` template, then styled to match the
-**Redeemer City to City NYC brand**: light cool-gray ground, scarlet-red accent
-(`#EB1D2E`), bold grotesque type (Archivo + Hanken Grotesk), a subtle cross/plus-grid
-motif, rounded white cards with soft shadows, and dark-navy panels. The design lives in
-components + `src/styles/global.css`; **all editable copy lives in `src/data/main.json`.**
+The homepage is a faithful rebuild of the live citytocity.nyc design in the Redeemer
+City to City NYC brand: light cool-gray ground, scarlet-red accent (`#EB1D2E`), bold
+grotesque type (Archivo + Hanken Grotesk), a cross/plus-grid motif, rounded white cards,
+dark-slate panels, a film-strip video block, and hand-drawn red circles/underlines. The
+design lives in components + `src/styles/global.css`; **all editable copy lives in
+`src/data/main.json`.**
 
 ## Editing rules (when AI is editing this site)
 
-For ~95% of changes — headlines, program names/descriptions, events, addresses,
-CTAs, footer links, the newsletter and giving copy — edit ONLY `src/data/main.json`.
-The components read every string from that file, so content edits flow through
-automatically and the design is preserved.
+For ~95% of changes — headlines, the announcement bar, program copy, the Nova section,
+the Start/Strengthen rows, the Keller memorial, footer/newsletter copy — edit ONLY
+`src/data/main.json`. The components read every string from that file, so content edits
+flow through automatically and the design is preserved.
 
 Touch `.astro` components or `global.css` only when the user explicitly asks for a
-**structural or visual** change the data model can't express (a new section type,
-a layout change, a color/typography change).
+**structural or visual** change the data model can't express.
 
 ### The `*emphasis*` convention
-In headlines and headings, wrap a word or phrase in `*asterisks*` to render it in the
-red accent — e.g. `"Starting & *strengthening* churches…"` or `"Nova *Omnia*"`. In the
-hero headline the emphasized phrase also gets a hand-drawn red circle. Move the asterisks
-to move the emphasis. Applies to:
-`home.hero.headline`, `home.pathwaysIntro.heading`, `home.pathways[].title`,
-`home.nova.title`, `home.conviction.quote`, `home.eventsIntro.heading`,
-`home.give.heading`. (Implemented by `emph()` in `src/site.ts`.)
+Wrap a word or phrase in `*asterisks*` to mark it for the red accent. Each section styles
+it its own way (no need to specify which): the hero word is plain red; **"How we
+\*help.\*"** and **"\*your\* journey"** get a hand-drawn red circle; the Nova heading
+(`*Ministry*`, `*Movement*`) and the belief line (`*most catalytic way*`) get a red
+underline; inline phrases in the rows go red. Implemented by `emph()` in `src/site.ts`.
 
 ### Placeholders to replace before launch
-- **Photography** — `home.hero.image` and `home.nova.image` are Unsplash placeholders.
-  Swap for City to City NYC's own photos (drop files in `public/media/` and point the
-  field at e.g. `/media/hero.jpg`).
-- **Event dates** — `home.events[]` dates are illustrative; confirm against the real calendar.
-- **Giving link** — `home.give.primaryCta.href` is `#give`; point it at the real donation URL.
-- **Newsletter** — the form currently does a `mailto:`; wire to a real provider when chosen.
+- **Photography** — every image (`home.hero.image`, `home.howWeHelp.video.image`,
+  `home.programs.image`, `home.nova.image`, each `home.rows[].image`,
+  `home.whoWeAre.image`, `home.memorial.image`) is an Unsplash placeholder. Swap for City
+  to City NYC's own photos (drop files in `public/media/` and point the field at e.g.
+  `/media/hero.jpg`).
+- **Announcement bar** — `home.announce.text` ("Celebration Night, June 5th") is dated; update or clear it.
+- **Video** — `home.howWeHelp.video.href` is `#`; point it at the real "Look at New York" video.
+- **Links** — program / row / nav hrefs point at on-site anchors; wire real destinations and the giving URL.
+- **Newsletter** — the footer form is a `mailto:`; wire to a real provider when chosen.
 
 ## Content model (`src/data/main.json` — the canonical content file)
 
 ```jsonc
 {
   "site":  { "name", "tagline", "description", "url"?, "email" },
-  "theme": { "accent" (#hex — the single brand color), "mode", "font" },
-  "nav":   [ { "label", "href" } ],            // top navigation
+  "theme": { "accent" (#hex), "mode", "font" },
+  "nav":   [ { "label", "href" } ],                         // top navigation; a "Give" label renders as the red button
   "home": {
-    "hero":        { "eyebrow", "headline", "lede", "primaryCta":{label,href},
-                     "secondaryCta":{label,href}, "image", "imageCaption", "verticalLabel" },
-    "creed":       [ "scrolling phrase", ... ],  // the marquee band under the hero
-    "pathwaysIntro": { "heading", "note" },
-    "pathways":    [ { "num", "glyph", "title", "blurb",
-                       "programs":[{name,desc}], "cta":{label,href} } ],
-    "nova":        { "eyebrow", "title", "body", "address", "cta":{label,href}, "image" },
-    "conviction":  { "eyebrow", "quote", "source" },
-    "eventsIntro": { "heading", "note" },
-    "events":      [ { "date", "name", "sub", "href" } ],
-    "memorial":    { "kicker", "name", "years", "body" },
-    "give":        { "eyebrow", "heading", "body", "primaryCta", "secondaryCta" },
-    "newsletter":  { "eyebrow", "heading", "body", "placeholder", "button" },
-    "footer":      { "columns":[{title,links:[{label,href}]}], "legal", "contactLine" }
+    "announce":  { "text", "languages":[ ... ] },           // top bar
+    "hero":      { "eyebrow", "headline", "sub", "image", "imageCaption" },
+    "howWeHelp": { "heading", "body", "cta":{label,href},
+                   "video":{ "label", "image", "href" } },  // film-strip video block
+    "programs":  { "lead", "heading", "image",
+                   "items":[ { "name", "body", "cta":{label,href} } ] },  // dark accordion
+    "nova":      { "eyebrow", "heading", "body", "cta", "image",
+                   "logoTop", "logoBottom", "logoCaption" },
+    "belief":    { "heading" },                             // centered conviction line
+    "rows":      [ { "title", "body", "cta":{label,href}, "image" } ],    // Start / Strengthen
+    "whoWeAre":  { "heading", "body", "cta", "image" },     // photo-overlay band
+    "memorial":  { "name", "years", "body", "cta", "image" },             // Keller, over aerial photo
+    "footer":    { "newsletterHeading", "newsletterButton", "getInTouchTitle",
+                   "addressLines":[ ... ], "legal", "copyright" }
   },
-  "pages": [ { "slug", "title", "content" (markdown) } ],  // home summary + sub-pages
+  "pages": [ { "slug", "title", "content" (markdown) } ],   // home summary + sub-pages
   "schema": { "type" (Schema.org type), "extra"? }
 }
 ```
 
-- `pages[0]` MUST have `slug:"/"` — its `content` is the SEO/`llms.txt` summary of the
-  homepage (the visible homepage is rendered from `home`, not from this markdown).
+- `pages[0]` MUST have `slug:"/"` — its `content` is the SEO/`llms.txt` summary (the visible
+  homepage is rendered from `home`, not this markdown).
 - Other `pages[]` (`/programs`, `/nova-omnia`, `/about`, `/contact`) are full markdown
   sub-pages, rendered via `marked` in the branded `.prose` shell.
-- `theme.accent` drives `--accent` (and thus the garnet `--garnet`) everywhere.
+- `theme.accent` drives `--accent` (and thus `--red`) everywhere.
 
 ## File map
 
@@ -77,7 +78,7 @@ src/
   site.ts                  # typed wrapper + emph() emphasis helper
   styles/global.css        # the full design system
   layouts/Base.astro       # <head>, fonts, JSON-LD, OG, reveal script, <slot/>
-  components/               # Header, Hero, Pathways, Nova, Conviction, Events, Memorial, Footer
+  components/               # Header, Hero, HowWeHelp, Programs, Nova, Belief, WhoWeAre, Memorial, Footer
   pages/
     index.astro            # homepage — composes the components from `home`
     [...slug].astro        # renders each non-home page's markdown
@@ -95,7 +96,7 @@ public/
 - `/llms.txt` advertising pages + `/api/site.json`
 - `/api/site.json` returning the full structured content (home sections included)
 - Sitemap via `@astrojs/sitemap`; robots.txt allowing all + sitemap pointer
-- Semantic HTML5, zero-JS except a tiny scroll-reveal observer
+- Semantic HTML5; zero-JS except a tiny scroll-reveal observer (accordion uses native `<details>`)
 
 ## Don't
 

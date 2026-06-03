@@ -3,12 +3,12 @@ import { site } from "../site";
 const m = site.home.memorial;
 ---
 <section class="keller">
+  <img class="bg" src={m.image} alt="Aerial view of New York" loading="lazy" />
   <div class="wrap">
-    <div class="frame rv">
-      <div class="em">{m.kicker}</div>
-      <h3>{m.name}</h3>
-      <div class="yrs">{m.years}</div>
-      <p>{m.body}</p>
-    </div>
+    <div class="rule"></div>
+    <h2 class="rv">{m.name}</h2>
+    <div class="yr rv">{m.years}</div>
+    <p class="rv">{m.body}</p>
+    <div class="cta rv"><a class="btn" href={m.cta.href}>{m.cta.label} <span class="a">→</span></a></div>
   </div>
 </section>

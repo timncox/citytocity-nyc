@@ -3,18 +3,19 @@ import { site, emph } from "../site";
 const n = site.home.nova;
 ---
 <section class="nova" id="nova">
-  <div class="wrap">
-    <div class="nova-grid">
-      <figure class="nova-figure rv">
-        <img src={n.image} alt={n.title.replace(/\*/g, "")} loading="lazy" />
-      </figure>
-      <div>
-        <span class="eyebrow rv">{n.eyebrow}</span>
-        <h2 class="rv" set:html={emph(n.title)} />
-        <p class="rv">{n.body}</p>
-        <div class="addr rv">{n.address}</div>
-        <a class="btn btn-primary rv" href={n.cta.href}>{n.cta.label} <span class="arw">→</span></a>
+  <div class="wrap nova-grid">
+    <div class="nova-card rv">
+      <img src={n.image} alt="Nova Omnia" loading="lazy" />
+      <div class="nova-logo">
+        <div class="nm">{n.logoTop}</div><div class="am">{n.logoBottom}</div>
+        <div class="cr">{n.logoCaption}</div>
       </div>
+    </div>
+    <div class="nova-txt">
+      <span class="ey rv">{n.eyebrow}</span>
+      <h2 class="rv" set:html={emph(n.heading)} />
+      <p class="rv">{n.body}</p>
+      <a class="btn rv" href={n.cta.href}>{n.cta.label} <span class="a">→</span></a>
     </div>
   </div>
 </section>

@@ -2,10 +2,11 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import Pathways from "../components/Pathways.astro";
+import HowWeHelp from "../components/HowWeHelp.astro";
+import Programs from "../components/Programs.astro";
 import Nova from "../components/Nova.astro";
-import Conviction from "../components/Conviction.astro";
-import Events from "../components/Events.astro";
+import Belief from "../components/Belief.astro";
+import WhoWeAre from "../components/WhoWeAre.astro";
 import Memorial from "../components/Memorial.astro";
 import Footer from "../components/Footer.astro";
 import { site, getPage } from "../site";
@@ -15,10 +16,11 @@ const home = getPage("/");
 <Base title={home?.title ?? site.site.name} description={site.site.description} pageSlug="/">
   <Header />
   <Hero />
-  <Pathways />
+  <HowWeHelp />
+  <Programs />
   <Nova />
-  <Conviction />
-  <Events />
+  <Belief />
+  <WhoWeAre />
   <Memorial />
-  <Footer involved={true} />
+  <Footer />
 </Base>

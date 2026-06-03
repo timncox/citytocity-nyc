@@ -1,20 +1,22 @@
 ---
-import { site } from "../site";
-interface Props { solid?: boolean }
-const { solid = false } = Astro.props;
-const nameParts = site.site.name.replace(/\s*NYC$/, "");
+import { site, emph } from "../site";
+const a = site.home.announce;
+const nameBase = site.site.name.replace(/\s*NYC$/, "").trim();
 const hasNyc = /NYC$/.test(site.site.name);
 ---
-<header class={`site-header${solid ? " solid" : ""}`}>
-  <nav class="nav">
-    <a class="brand" href="/">
-      <span class="mark"></span>
-      {nameParts.trim()}{hasNyc && <>&nbsp;<span class="nyc">NYC</span></>}
-    </a>
-    <div class="nav-links">
+<div class="announce">
+  <span class="dot"></span><span set:html={emph(a.text)} />
+  {a.languages?.length ? (
+    <span class="lang"><b>{a.languages[0]}</b>{a.languages.slice(1).map((l) => <> &nbsp;·&nbsp; {l}</>)}</span>
+  ) : null}
+</div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/"><span class="m"></span> {nameBase}{hasNyc && <> <span class="nyc">NYC</span></>}</a>
+    <nav class="menu">
       {site.nav.map((item) => (
-        <a class={item.label === "Give" ? "nav-cta" : ""} href={item.href}>{item.label}</a>
+        <a class={item.label === "Give" ? "give" : ""} href={item.href}>{item.label}</a>
       ))}
-    </div>
-  </nav>
+    </nav>
+  </div>
 </header>

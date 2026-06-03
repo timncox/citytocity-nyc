@@ -9,50 +9,39 @@ export interface Link {
   label: string;
   href: string;
 }
-export interface Program {
-  name: string;
-  desc: string;
-}
-export interface Pathway {
-  num: string;
-  glyph: string;
-  title: string;
-  blurb: string;
-  programs: Program[];
-  cta: Link;
-}
-export interface EventItem {
-  date: string;
-  name: string;
-  sub: string;
+export interface CTA {
+  label: string;
   href: string;
 }
-export interface FooterCol {
+export interface ProgramItem {
+  name: string;
+  body: string;
+  cta: CTA;
+}
+export interface Row {
   title: string;
-  links: Link[];
+  body: string;
+  cta: CTA;
+  image: string;
 }
 export interface Home {
-  hero: {
-    eyebrow: string;
-    headline: string;
-    lede: string;
-    primaryCta: Link;
-    secondaryCta: Link;
-    image: string;
-    imageCaption: string;
-    verticalLabel: string;
+  announce: { text: string; languages: string[] };
+  hero: { eyebrow: string; headline: string; sub: string; image: string; imageCaption: string };
+  howWeHelp: { heading: string; body: string; cta: CTA; video: { label: string; image: string; href: string } };
+  programs: { lead: string; heading: string; image: string; items: ProgramItem[] };
+  nova: { eyebrow: string; heading: string; body: string; cta: CTA; image: string; logoTop: string; logoBottom: string; logoCaption: string };
+  belief: { heading: string };
+  rows: Row[];
+  whoWeAre: { heading: string; body: string; cta: CTA; image: string };
+  memorial: { name: string; years: string; body: string; cta: CTA; image: string };
+  footer: {
+    newsletterHeading: string;
+    newsletterButton: string;
+    getInTouchTitle: string;
+    addressLines: string[];
+    legal: string;
+    copyright: string;
   };
-  creed: string[];
-  pathwaysIntro: { heading: string; note: string };
-  pathways: Pathway[];
-  nova: { eyebrow: string; title: string; body: string; address: string; cta: Link; image: string };
-  conviction: { eyebrow: string; quote: string; source: string };
-  eventsIntro: { heading: string; note: string };
-  events: EventItem[];
-  memorial: { kicker: string; name: string; years: string; body: string };
-  give: { eyebrow: string; heading: string; body: string; primaryCta: Link; secondaryCta: Link };
-  newsletter: { eyebrow: string; heading: string; body: string; placeholder: string; button: string };
-  footer: { columns: FooterCol[]; legal: string; contactLine: string };
 }
 
 export interface SiteConfig {
@@ -80,9 +69,11 @@ export function pathFromSlug(slug: string): string {
 }
 
 /**
- * Editor-friendly emphasis. In main.json, wrap a word or phrase in *asterisks*
- * to render it in the garnet display-italic accent — e.g. "Starting & *strengthening*".
- * Everything else is HTML-escaped, so JSON copy stays plain text and safe.
+ * Editor-friendly emphasis. In copy, wrap a word or phrase in *asterisks* to mark it
+ * for the red accent. Each section styles `.hl` its own way — the hero word is plain
+ * red, "How we help." and "your" get a hand-drawn circle, and the Nova / belief
+ * headings get a red underline. Everything else is HTML-escaped, so JSON copy stays
+ * plain text and safe.
  */
 export function emph(input: string): string {
   const escaped = input

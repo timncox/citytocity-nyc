@@ -1,0 +1,12 @@
+---
+import { site } from "../site";
+const w = site.home.whoWeAre;
+---
+<section class="who">
+  <img src={w.image} alt="People studying together" loading="lazy" />
+  <div class="wrap">
+    <h2 class="rv">{w.heading}</h2>
+    <p class="rv">{w.body}</p>
+    <a class="btn-g rv" href={w.cta.href}>{w.cta.label}</a>
+  </div>
+</section>
