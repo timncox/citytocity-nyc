@@ -1,0 +1,12 @@
+---
+import { site, emph } from "../site";
+const q = site.home.quote;
+---
+<section class="quote" id="give">
+  <div class="wrap">
+    <span class="lab rv">{q.kicker}</span>
+    <p class="disp rv" set:html={emph(q.text)} />
+    <div class="src lab rv">{q.source}</div>
+  </div>
+</section>
+<div class="divider"></div>

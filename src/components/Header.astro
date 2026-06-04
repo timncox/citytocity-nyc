@@ -1,6 +1,24 @@
 ---
-import Announce from "./Announce.astro";
-import Nav from "./Nav.astro";
+import { site } from "../site";
+const b = site.home.brand;
 ---
-<Announce />
-<Nav />
+<header class="site-header">
+  <div class="bar">
+    <a class="brandmark" href="/">
+      <span class="nm">{b.name}</span>
+      <span class="sub">{b.subtitle}</span>
+    </a>
+    <span class="collab">{b.collab}</span>
+  </div>
+  <div class="bar2">
+    <button class="toggle" type="button" aria-label="Toggle day / night theme" aria-pressed="false">
+      <span class="lab">Day / Night</span>
+      <span class="sw" aria-hidden="true"></span>
+    </button>
+    <nav class="mainnav" aria-label="Primary">
+      {site.nav.map((item) => (
+        <a class={item.label === "Give" ? "give" : ""} href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>

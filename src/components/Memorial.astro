@@ -1,14 +1,12 @@
 ---
-import { site } from "../site";
+import { site, emph } from "../site";
 const m = site.home.memorial;
 ---
 <section class="keller">
-  <img class="bg" src={m.image} alt="Aerial view of New York" loading="lazy" />
   <div class="wrap">
-    <div class="rule"></div>
-    <h2 class="rv">{m.name}</h2>
+    <span class="lab">{m.kicker}</span>
+    <h3 class="disp rv" set:html={emph(m.name)} />
     <div class="yr rv">{m.years}</div>
     <p class="rv">{m.body}</p>
-    <div class="cta rv"><a class="btn" href={m.cta.href}>{m.cta.label} <span class="a">→</span></a></div>
   </div>
 </section>

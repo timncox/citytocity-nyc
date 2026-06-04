@@ -1,28 +1,34 @@
 ---
-import { site } from "../site";
-const f = site.home.footer;
+import { site, emph } from "../site";
+const g = site.home.give;
+const b = site.home.brand;
 ---
 <footer class="foot">
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <h4>{f.newsletterHeading}</h4>
-        <form class="news" action={`mailto:${site.site.email}`} method="post" enctype="text/plain" aria-label={f.newsletterHeading}>
-          <input name="first" placeholder="First Name (required)" aria-label="First name" autocomplete="given-name" required />
-          <input name="last" placeholder="Last Name (required)" aria-label="Last name" autocomplete="family-name" required />
-          <input class="full" type="email" name="email" placeholder="Email (required)" aria-label="Email address" autocomplete="email" required />
-          <button class="btn sub" type="submit">{f.newsletterButton}</button>
-        </form>
-      </div>
-      <div class="gt">
-        <h5>{f.getInTouchTitle}</h5>
-        <a href={`mailto:${site.site.email}`}>{site.site.email}</a>
-        <p>{f.addressLines.map((line, i) => <>{i > 0 && <br />}{line}</>)}</p>
-      </div>
+    <div class="foot-top">
+      <h4 class="disp" set:html={emph(g.cta)} />
+      <form class="foot-news" action={`mailto:${site.site.email}`} method="post" enctype="text/plain" aria-label="Newsletter signup">
+        <input type="email" name="email" placeholder={g.newsletterPlaceholder} aria-label="Email address" autocomplete="email" required />
+        <button type="submit">{g.newsletterButton} →</button>
+      </form>
     </div>
-    <div class="base">
-      <span class="brand-line">{f.legal}</span>
-      <span>{f.copyright}</span>
+    <div class="foot-cols">
+      <div>
+        <span class="brandmark"><span class="nm disp">{b.name}</span> <span class="sub">{b.subtitle.replace(/New York City/, "NYC")}</span></span>
+        <p class="blurb">{g.blurb}</p>
+      </div>
+      {g.columns.map((col) => (
+        <div>
+          <h5 class="lab">{col.title}</h5>
+          <ul>
+            {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="foot-base">
+      <span>{g.legal}</span>
+      <span>{g.contactLine}</span>
     </div>
   </div>
 </footer>

@@ -25,15 +25,23 @@ const jsonLd: Record<string, unknown> = {
 };
 ---
 <!doctype html>
-<html lang="en" style={`--accent:${site.theme.accent}`}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script is:inline>
+      (() => { try {
+        const s = localStorage.getItem("ctc-theme");
+        const t = s || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day");
+        document.documentElement.dataset.theme = t;
+      } catch (e) {} })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonicalUrl} />
 
-    <meta name="theme-color" content={site.theme.accent} />
+    <meta name="theme-color" content="#E7E4DD" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15140F" media="(prefers-color-scheme: dark)" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
@@ -55,7 +63,7 @@ const jsonLd: Record<string, unknown> = {
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
@@ -74,6 +82,16 @@ const jsonLd: Record<string, unknown> = {
         const run = () => document.querySelectorAll(".rv").forEach((el) => io.observe(el));
         if (document.readyState !== "loading") run();
         else document.addEventListener("DOMContentLoaded", run);
+        const tog = document.querySelector(".toggle");
+        if (tog) {
+          tog.setAttribute("aria-pressed", document.documentElement.dataset.theme === "night");
+          tog.addEventListener("click", () => {
+            const next = document.documentElement.dataset.theme === "night" ? "day" : "night";
+            document.documentElement.dataset.theme = next;
+            try { localStorage.setItem("ctc-theme", next); } catch (e) {}
+            tog.setAttribute("aria-pressed", next === "night");
+          });
+        }
         window.addEventListener("load", () => {
           document.querySelectorAll(".hero .rv").forEach((el, i) => {
             el.style.transitionDelay = i * 0.09 + "s";

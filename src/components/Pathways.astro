@@ -1,0 +1,19 @@
+---
+import { site, emph } from "../site";
+const p = site.home.pathways;
+---
+<section class="paths" id="start">
+  <div class="wrap">
+    <div class="kick-row"><span class="lab">{p.index} — {p.kicker}</span><span class="idx">ii</span></div>
+    <div style="margin-top:24px">
+      {p.items.map((item) => (
+        <a class="path rv" href={item.href} id={item.num === "02" ? "strengthen" : undefined}>
+          <span class="pn">{item.num}</span>
+          <span class="pt disp" set:html={emph(item.title)} />
+          <span class="pd">{item.desc}</span>
+          <span class="arrow disp" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

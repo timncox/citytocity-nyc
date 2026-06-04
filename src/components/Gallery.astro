@@ -1,0 +1,18 @@
+---
+import { site, emph } from "../site";
+const g = site.home.gallery;
+---
+<section class="gallery" id="the-city">
+  <div class="wrap">
+    <div class="gal-head rv">
+      <span class="lab">{g.index} — {g.kicker}</span>
+      <h2 class="disp" set:html={emph(g.heading)} />
+    </div>
+    <div class="scatter">
+      {g.images.map((src, i) => (
+        <figure class={`s${i} rv`}><img src={src} alt="" loading="lazy" /></figure>
+      ))}
+      <p class="cap">{g.caption}</p>
+    </div>
+  </div>
+</section>

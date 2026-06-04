@@ -1,18 +1,23 @@
 ---
-import { site, emph } from "../site";
-import Announce from "./Announce.astro";
-import Nav from "./Nav.astro";
+import { site } from "../site";
 const h = site.home.hero;
+const cls = ["l1", "l2", "l3"];
 ---
-<section class="hero-banner">
-  <img class="hero-skyline" src={h.image} alt="" aria-hidden="true" />
-  <div class="hero-top">
-    <Announce />
-    <Nav floating={true} />
-  </div>
-  <div class="wrap hero-inner">
-    <span class="ey rv">{h.eyebrow}</span>
-    <h1 class="rv" set:html={emph(h.headline)} />
-    <p class="sub rv">{h.sub}</p>
+<section class="hero">
+  <div class="wrap">
+    <h1 class="rv">
+      {h.lines.map((line, i) => (
+        <span class={`l ${cls[i] ?? "l3"}${line.italic ? " it" : ""}`}>{line.text}</span>
+      ))}
+    </h1>
+    <nav class="breadcrumb rv" aria-label="Sections">
+      {h.breadcrumb.map((item, i) => (
+        <>
+          {i > 0 && <span class="sep" aria-hidden="true">/</span>}
+          <a href={item.href}>{item.label}</a>
+        </>
+      ))}
+    </nav>
+    <p class="lede rv">{h.lede}</p>
   </div>
 </section>

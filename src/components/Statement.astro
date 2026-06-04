@@ -1,0 +1,15 @@
+---
+import { site, emph } from "../site";
+const s = site.home.statement;
+---
+<div class="divider"></div>
+<section class="statement">
+  <div class="wrap">
+    <div class="kick-row"><span class="lab">{s.index} — {s.kicker}</span><span class="idx">i</span></div>
+    <p class="big rv" set:html={emph(s.big)} />
+    <div class="meta">
+      <div class="rv"><span class="lab">{s.metaLeft.label}</span><p>{s.metaLeft.body}</p></div>
+      <div class="rv"><span class="lab">{s.metaRight.label}</span><p>{s.metaRight.body}</p></div>
+    </div>
+  </div>
+</section>

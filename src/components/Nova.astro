@@ -3,25 +3,17 @@ import { site, emph } from "../site";
 const n = site.home.nova;
 ---
 <section class="nova" id="nova">
-  <div class="wrap nova-grid">
-    <div class="nova-card rv">
-      <img src={n.image} alt="Nova Omnia" loading="lazy" />
-      <div class="nova-logo">
-        {n.logoImage ? (
-          <img class="nova-logo-img" src={n.logoImage} alt={`${n.logoTop} ${n.logoBottom}`} />
-        ) : (
-          <>
-            <div class="nm">{n.logoTop}</div><div class="am">{n.logoBottom}</div>
-            <div class="cr">{n.logoCaption}</div>
-          </>
-        )}
+  <div class="wrap">
+    <div class="nova-grid">
+      <figure class="nova-fig rv"><img src={n.image} alt="A gathering at Nova Omnia" loading="lazy" /></figure>
+      <div>
+        <span class="lab rv">{n.index} — {n.kicker}</span>
+        <h2 class="disp rv" set:html={emph(n.title)} />
+        <p class="rv">{n.body}</p>
+        <div class="addr lab rv">{n.address}</div>
+        <a class="btn-line rv" href={n.cta.href}>{n.cta.label} →</a>
       </div>
-    </div>
-    <div class="nova-txt">
-      <span class="ey rv">{n.eyebrow}</span>
-      <h2 class="rv" set:html={emph(n.heading)} />
-      <p class="rv">{n.body}</p>
-      <a class="btn rv" href={n.cta.href}>{n.cta.label} <span class="a">→</span></a>
     </div>
   </div>
 </section>
+<div class="divider"></div>
