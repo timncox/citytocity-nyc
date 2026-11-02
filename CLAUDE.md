@@ -1,3 +1,8 @@
+---
+status: dormant
+last_touched: 2026-06-03
+---
+
 # City to City NYC — weft site
 
 An AI-discoverable Astro site for **City to City NYC** (a ministry of Redeemer City to City).

@@ -6,3 +6,14 @@ dist/
 .env.local
 *.log
 .DS_Store
+# --- secrets & local files (added 2026-11-02, GitHub migration) ---
+.claude/worktrees/
+.dev.vars
+.env*.local
+*.key
+*.p12
+*.p8
+*.pem
+!.env.example
+!.env.*.example
+!.env.sample
